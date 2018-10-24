@@ -22,19 +22,18 @@
  */
 package org.aion.api.type.core.tx;
 
-import org.aion.api.log.AionLoggerFactory;
-import org.aion.api.log.LogEnum;
 import org.aion.base.type.Address;
 import org.aion.base.type.ITransaction;
 import org.aion.crypto.ISignature;
 import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /** @author jin */
 public abstract class AbstractTransaction implements ITransaction {
 
     private static final int nrgDigits = 64;
 
-    static final Logger LOG = AionLoggerFactory.getLogger(LogEnum.TRX.toString());
+    static final Logger LOG = LoggerFactory.getLogger(AbstractTransaction.class);
 
     /* SHA3 hash of the RLP encoded transaction */
     protected byte[] hash;

@@ -32,10 +32,9 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 import org.aion.api.IUtils;
-import org.aion.api.log.AionLoggerFactory;
-import org.aion.api.log.LogEnum;
 import org.apache.commons.collections4.map.LRUMap;
 import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /** Created by Jay Tseng on 23/05/17. */
 
@@ -44,7 +43,7 @@ public class LRUTimeMap<K, V> extends LRUMap<K, V> {
 
     private static final long serialVersionUID = 1000000001L;
     private final int timeout;
-    private final Logger LOGGER = AionLoggerFactory.getLogger(LogEnum.EXE.name());
+    private final Logger LOGGER = LoggerFactory.getLogger(LRUTimeMap.class);
     private final Map<Long, K> timeMap = Collections.synchronizedMap(new LinkedHashMap<>());
     private final ScheduledExecutorService timeoutChecker =
             Executors.newSingleThreadScheduledExecutor();

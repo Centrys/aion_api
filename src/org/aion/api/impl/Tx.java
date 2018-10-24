@@ -40,8 +40,6 @@ import org.aion.api.impl.internal.ApiUtils;
 import org.aion.api.impl.internal.Message;
 import org.aion.api.impl.internal.Message.Funcs;
 import org.aion.api.impl.internal.Message.Servs;
-import org.aion.api.log.AionLoggerFactory;
-import org.aion.api.log.LogEnum;
 import org.aion.api.type.ApiMsg;
 import org.aion.api.type.ApiMsg.cast;
 import org.aion.api.type.CompileResponse;
@@ -62,11 +60,12 @@ import org.aion.base.util.Hex;
 import org.aion.crypto.ECKey;
 import org.aion.crypto.ECKeyFac;
 import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /** Created by Jay Tseng on 15/11/16. */
 public final class Tx implements ITx {
 
-    private final Logger LOGGER = AionLoggerFactory.getLogger(LogEnum.TRX.name());
+    private final Logger LOGGER = LoggerFactory.getLogger(Tx.class);
     final AionAPIImpl apiInst;
 
     private ByteArrayWrapper fmsg;

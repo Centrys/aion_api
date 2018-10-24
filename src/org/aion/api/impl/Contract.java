@@ -40,8 +40,6 @@ import org.aion.api.IAionAPI;
 import org.aion.api.IContract;
 import org.aion.api.IUtils;
 import org.aion.api.impl.internal.ApiUtils;
-import org.aion.api.log.AionLoggerFactory;
-import org.aion.api.log.LogEnum;
 import org.aion.api.sol.ISolidityArg;
 import org.aion.api.sol.impl.Bool;
 import org.aion.api.sol.impl.Bytes;
@@ -66,6 +64,7 @@ import org.aion.base.type.Hash256;
 import org.aion.base.util.ByteArrayWrapper;
 import org.apache.commons.collections4.map.LRUMap;
 import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Returns a Contract class that sits above the NucoAPI layer that provides the user with a
@@ -78,7 +77,7 @@ import org.slf4j.Logger;
 @SuppressWarnings("Annotator")
 public final class Contract implements IContract {
 
-    private static final Logger LOGGER = AionLoggerFactory.getLogger(LogEnum.CNT.name());
+    private static final Logger LOGGER = LoggerFactory.getLogger(Contract.class);
     private static final String REGEX_SC_PATT = "\\[([0-9]*)\\]";
     private static final String ALLEVENTS = "ALLEVENTS";
     private static final String REGEX_NUMERIC = "-?\\d+(\\.\\d+)?";

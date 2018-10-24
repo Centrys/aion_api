@@ -29,16 +29,15 @@ import java.util.List;
 import org.aion.api.IWallet;
 import org.aion.api.impl.internal.ApiUtils;
 import org.aion.api.impl.internal.Message;
-import org.aion.api.log.AionLoggerFactory;
-import org.aion.api.log.LogEnum;
 import org.aion.api.type.ApiMsg;
 import org.aion.base.type.Address;
 import org.aion.base.util.ByteUtil;
 import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /** Created by Jay Tseng on 14/11/16. */
 public class Wallet implements IWallet {
-    private static final Logger LOGGER = AionLoggerFactory.getLogger(LogEnum.WLT.name());
+    private static final Logger LOGGER = LoggerFactory.getLogger(Wallet.class);
     private AionAPIImpl apiInst;
 
     protected Wallet(AionAPIImpl inst) {

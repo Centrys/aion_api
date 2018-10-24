@@ -51,8 +51,6 @@ import org.aion.api.IAccount;
 import org.aion.api.impl.internal.ApiUtils;
 import org.aion.api.impl.internal.Message;
 import org.aion.api.impl.internal.Message.t_Key;
-import org.aion.api.log.AionLoggerFactory;
-import org.aion.api.log.LogEnum;
 import org.aion.api.type.ApiMsg;
 import org.aion.api.type.Key;
 import org.aion.api.type.KeyExport;
@@ -63,11 +61,12 @@ import org.aion.base.util.TypeConverter;
 import org.aion.crypto.ECKey;
 import org.aion.crypto.ECKeyFac;
 import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /** Created by Jay Tseng on 19/04/17. */
 public final class Account implements IAccount {
 
-    private static final Logger LOGGER = AionLoggerFactory.getLogger(LogEnum.ACC.name());
+    private static final Logger LOGGER = LoggerFactory.getLogger(Account.class);
     private AionAPIImpl apiInst;
     private static final int ACCOUNT_LIMIT = 1000;
 

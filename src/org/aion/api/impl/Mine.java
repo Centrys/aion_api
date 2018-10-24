@@ -26,14 +26,13 @@ import com.google.protobuf.InvalidProtocolBufferException;
 import org.aion.api.IMine;
 import org.aion.api.impl.internal.ApiUtils;
 import org.aion.api.impl.internal.Message;
-import org.aion.api.log.AionLoggerFactory;
-import org.aion.api.log.LogEnum;
 import org.aion.api.type.ApiMsg;
 import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /** Created by Jay Tseng on 15/11/16. */
 public class Mine implements IMine {
-    private static final Logger LOGGER = AionLoggerFactory.getLogger(LogEnum.MNE.name());
+    private static final Logger LOGGER = LoggerFactory.getLogger(Mine.class);
     private AionAPIImpl apiInst;
 
     Mine(AionAPIImpl inst) {

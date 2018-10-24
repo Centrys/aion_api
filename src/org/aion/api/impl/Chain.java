@@ -33,8 +33,6 @@ import org.aion.api.impl.internal.ApiUtils;
 import org.aion.api.impl.internal.Message;
 import org.aion.api.impl.internal.Message.Funcs;
 import org.aion.api.impl.internal.Message.Retcode;
-import org.aion.api.log.AionLoggerFactory;
-import org.aion.api.log.LogEnum;
 import org.aion.api.type.ApiMsg;
 import org.aion.api.type.ApiMsg.cast;
 import org.aion.api.type.Block;
@@ -43,11 +41,12 @@ import org.aion.base.type.Hash256;
 import org.aion.base.util.ByteArrayWrapper;
 import org.aion.base.util.ByteUtil;
 import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /** Created by Jay Tseng on 14/11/16. */
 public final class Chain implements IChain {
 
-    private static final Logger LOGGER = AionLoggerFactory.getLogger(LogEnum.CHN.name());
+    private static final Logger LOGGER = LoggerFactory.getLogger(Chain.class);
     AionAPIImpl apiInst;
 
     Chain(AionAPIImpl inst) {

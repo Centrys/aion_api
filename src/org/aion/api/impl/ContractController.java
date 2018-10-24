@@ -38,8 +38,6 @@ import java.util.Objects;
 import java.util.stream.Collectors;
 import org.aion.api.IContract;
 import org.aion.api.IContractController;
-import org.aion.api.log.AionLoggerFactory;
-import org.aion.api.log.LogEnum;
 import org.aion.api.sol.ISolidityArg;
 import org.aion.api.type.ApiMsg;
 import org.aion.api.type.CompileResponse;
@@ -51,10 +49,11 @@ import org.aion.base.type.Address;
 import org.aion.base.type.Hash256;
 import org.aion.base.util.ByteArrayWrapper;
 import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public final class ContractController implements IContractController {
 
-    private static final Logger LOGGER = AionLoggerFactory.getLogger(LogEnum.CNT.name());
+    private static final Logger LOGGER = LoggerFactory.getLogger(ContractController.class);
     private static final String REGEX_SC_REPLACER = "\\p{Cc}";
     private static final Map<Address, IContract> CONTAINER = new HashMap<>();
     private static AionAPIImpl API;

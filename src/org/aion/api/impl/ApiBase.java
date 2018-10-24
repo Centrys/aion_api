@@ -32,13 +32,13 @@ import org.aion.api.cfg.CfgApi;
 import org.aion.api.impl.internal.ApiUtils;
 import org.aion.api.impl.internal.Message;
 import org.aion.api.log.AionLoggerFactory;
-import org.aion.api.log.LogEnum;
 import org.aion.api.type.ApiMsg;
 import org.aion.api.type.Event;
 import org.aion.api.type.MsgRsp;
 import org.aion.base.type.Address;
 import org.aion.base.util.ByteArrayWrapper;
 import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.zeromq.ZMQ;
 
 /** Created by Jay Tseng on 14/11/16. */
@@ -60,7 +60,7 @@ public class ApiBase {
     ApiBase() {
         cfg = CfgApi.inst();
         AionLoggerFactory.init(cfg.getLog().getModules());
-        LOGGER = AionLoggerFactory.getLogger(LogEnum.BSE.name());
+        LOGGER = LoggerFactory.getLogger(ApiBase.class);
         Thread.currentThread().setName("api");
     }
 

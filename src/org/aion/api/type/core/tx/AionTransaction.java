@@ -477,8 +477,7 @@ public class AionTransaction extends AbstractTransaction {
     }
 
     public static AionTransaction create(
-            String to, BigInteger amount, BigInteger nonce, long nrg, long nrgPrice)
-            throws Exception {
+            String to, BigInteger amount, BigInteger nonce, long nrg, long nrgPrice) {
         return new AionTransaction(
                 nonce.toByteArray(), Address.wrap(to), amount.toByteArray(), null, nrg, nrgPrice);
     }

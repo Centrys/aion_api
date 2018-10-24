@@ -459,7 +459,7 @@ public class ApiUtils {
     }
 
     public static ByteArrayWrapper parseBody(byte[] rsp) {
-        boolean hasHash = (rsp[2] == 1 ? true : false);
+        boolean hasHash = (rsp[2] == 1);
         int bodyLen = rsp.length - (hasHash ? RSP_HEADER_LEN : RSP_HEADER_NOHASH_LEN);
 
         if (hasHash) {
@@ -473,7 +473,7 @@ public class ApiUtils {
     }
 
     public static boolean isTypeBoolean(byte b) {
-        return b == 1 ? true : false;
+        return b == 1;
     }
 
     public static boolean endTxStatus(int status) {

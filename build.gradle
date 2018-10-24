@@ -90,10 +90,10 @@ dependencies {
         compile project(':modLogger')
         compile project(':modRlp')
     } else {
-        compile files("./mod/modAionBase.jar");
-        compile files("./mod/modCrypto.jar");
-        compile files("./mod/modLogger.jar");
-        compile files("./mod/modRlp.jar");
+        compile files("./mod/modAionBase.jar")
+        compile files("./mod/modCrypto.jar")
+        compile files("./mod/modLogger.jar")
+        compile files("./mod/modRlp.jar")
     }
     compile files("./lib/libnzmq.jar")
     compile files("./lib/libnsc.jar")
@@ -118,10 +118,10 @@ task getVersion(type: JavaExec) {
     main = 'org.aion.api.tools.ApiDemo'
     args '-v'
     standardOutput = new ByteArrayOutputStream()
-    project.ext["compiled_version"] = "Unknown";
+    project.ext["compiled_version"] = "Unknown"
     doLast { 
        def date = new Date().format('YY-MM-dd')
-       project.ext["compiled_version"] = standardOutput.toString().replace('\n', '') + '-' + date;
+       project.ext["compiled_version"] = standardOutput.toString().replace('\n', '') + '-' + date
     }
 }
 
@@ -262,7 +262,7 @@ clean.doFirst {
 task updateAionDeps(type: Copy) { 
     doFirst {
         if(rootProject.name != AION_PROJECT_NAME) { 
-            throw new GradleException('Can only update kernel dependencies when calling this task with aion as the root project');
+            throw new GradleException('Can only update kernel dependencies when calling this task with aion as the root project')
         }
     }
 
@@ -281,7 +281,7 @@ task updateAionDeps(type: Copy) {
 task updateNativeDeps { 
     doFirst {
         if(rootProject.name != AION_PROJECT_NAME) { 
-            throw new GradleException('Can only update kernel dependencies when calling this task with aion as the root project');
+            throw new GradleException('Can only update kernel dependencies when calling this task with aion as the root project')
         }
     }
 

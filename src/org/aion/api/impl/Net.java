@@ -29,18 +29,17 @@ import org.aion.api.INet;
 import org.aion.api.impl.internal.ApiUtils;
 import org.aion.api.impl.internal.Message;
 import org.aion.api.impl.internal.Message.Funcs;
-import org.aion.api.log.AionLoggerFactory;
-import org.aion.api.log.LogEnum;
 import org.aion.api.type.ApiMsg;
 import org.aion.api.type.ApiMsg.cast;
 import org.aion.api.type.Node;
 import org.aion.api.type.Protocol;
 import org.aion.api.type.SyncInfo;
 import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /** Created by Jay Tseng on 15/11/16. */
 public class Net implements INet {
-    private static final Logger LOGGER = AionLoggerFactory.getLogger(LogEnum.NET.name());
+    private static final Logger LOGGER = LoggerFactory.getLogger(Net.class);
     private AionAPIImpl apiInst;
 
     Net(AionAPIImpl inst) {

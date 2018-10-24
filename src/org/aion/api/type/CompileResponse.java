@@ -35,9 +35,8 @@ import java.util.Objects;
 import java.util.regex.Matcher;
 import org.aion.api.IUtils;
 import org.aion.api.impl.internal.ApiUtils;
-import org.aion.api.log.AionLoggerFactory;
-import org.aion.api.log.LogEnum;
 import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Contains all relevant information to compile responses, note that some parameters are not yet
@@ -48,7 +47,7 @@ import org.slf4j.Logger;
  */
 public final class CompileResponse {
 
-    private static final Logger LOGGER = AionLoggerFactory.getLogger(LogEnum.CNT.name());
+    private static final Logger LOGGER = LoggerFactory.getLogger(CompileResponse.class);
 
     private final String code;
     private final String source;

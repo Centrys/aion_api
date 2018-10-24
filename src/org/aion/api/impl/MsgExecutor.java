@@ -52,8 +52,6 @@ import org.aion.api.cfg.CfgApi;
 import org.aion.api.impl.internal.ApiUtils;
 import org.aion.api.impl.internal.LRUTimeMap;
 import org.aion.api.impl.internal.Message;
-import org.aion.api.log.AionLoggerFactory;
-import org.aion.api.log.LogEnum;
 import org.aion.api.type.ContractEvent;
 import org.aion.api.type.Event;
 import org.aion.api.type.MsgRsp;
@@ -64,6 +62,7 @@ import org.aion.base.util.ByteUtil;
 import org.aion.base.util.NativeLoader;
 import org.apache.commons.collections4.map.LRUMap;
 import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.zeromq.ZMQ;
 import org.zeromq.ZMQ.Context;
 import org.zeromq.ZMQ.PollItem;
@@ -74,7 +73,7 @@ public class MsgExecutor implements Runnable {
 
     private final int qSize = 50_000;
     private final int maxPenddingTx = 10_000;
-    private final Logger LOGGER = AionLoggerFactory.getLogger(LogEnum.EXE.name());
+    private final Logger LOGGER = LoggerFactory.getLogger(MsgExecutor.class);
     private final String WK_BIND_ADDR = "inproc://apiWkTh";
     private final String CB_BIND_ADDR = "inproc://apicbTh";
     private final String HB_BIND_ADDR = "inproc://apihbTh";

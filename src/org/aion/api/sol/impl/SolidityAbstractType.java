@@ -28,11 +28,10 @@ import java.util.List;
 import org.aion.api.ITx;
 import org.aion.api.impl.ErrId;
 import org.aion.api.impl.internal.ApiUtils;
-import org.aion.api.log.AionLoggerFactory;
-import org.aion.api.log.LogEnum;
 import org.aion.api.type.TxArgs;
 import org.aion.base.util.ByteArrayWrapper;
 import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Abstract class that all Solidity type derive from. Contains a core set of operations related to
@@ -41,7 +40,7 @@ import org.slf4j.Logger;
  */
 public abstract class SolidityAbstractType {
 
-    protected static final Logger LOGGER = AionLoggerFactory.getLogger(LogEnum.SOL.name());
+    protected static final Logger LOGGER = LoggerFactory.getLogger(SolidityAbstractType.class);
     String type;
     SolidityValue.SolidityArgsType typeProperty;
     private List<Integer> dynamicParameters;

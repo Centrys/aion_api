@@ -181,7 +181,7 @@ public class KeystoreFormat {
         throw new RuntimeException("Most probably a wrong passphrase");
     }
 
-    private static byte[] checkMacScrypt(KeystoreItem keystore, String password) throws Exception {
+    private static byte[] checkMacScrypt(KeystoreItem keystore, String password) {
         byte[] part = new byte[16];
         KdfParams params = keystore.getKeystoreCrypto().getKdfParams();
         byte[] h =
