@@ -213,7 +213,7 @@ task postBuildTar(type: Tar) {
     dependsOn javadocZip
 
     compression = Compression.GZIP
-
+    outputs.dir("pack")
     destinationDir = file('pack/')
     doFirst {
         mkdir 'pack'
